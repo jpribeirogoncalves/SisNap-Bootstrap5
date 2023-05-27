@@ -1,0 +1,51 @@
+body {
+
+
+    background-color: #f8f9fa!important;
+  
+  
+}
+
+main{
+    width: 100%;
+    height: 500px;
+    margin-bottom: 50px;
+}
+
+table{
+    width: auto;
+}
+
+
+table a{
+     
+    padding: 4px 15px;
+    cursor: pointer;
+}
+
+table img{
+    width: 32px;
+    height: 32px;
+}
+
+.table-colored {
+    background-color: #ffffff;
+}
+
+
+footer{
+
+    color: white;
+    width: 100%;
+    height: 70px;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+
+
+}

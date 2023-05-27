@@ -1,0 +1,48 @@
+body {
+
+  
+    padding: 0;
+  
+    margin: 0;
+  
+    background-color: #f8f9fa!important;
+  
+  
+}
+
+main{
+    margin-bottom: 80px;
+}
+
+table{
+    background-color: #ffffff;
+}
+
+table a{
+     
+    padding: 4px 15px;
+    cursor: pointer;
+}
+
+table img{
+    width: 32px;
+    height: 32px;
+}
+
+footer{
+
+    color: white;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+
+
+}
