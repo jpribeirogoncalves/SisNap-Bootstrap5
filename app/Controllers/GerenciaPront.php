@@ -156,12 +156,12 @@ class GerenciaPront extends BaseController
 
         $this->registerUserAction('Criou um novo prontuário');
 
-        return view('prontuario',[
+        return view('prontuario', [
             'id_usuario' => $id_usuario,
             'nome' => $nome,
             'message' => $data['message'],
-            'type' => $data['type'] 
-    ]);
+            'type' => $data['type']
+        ]);
     }
 
     public function storeEdit()
@@ -181,12 +181,12 @@ class GerenciaPront extends BaseController
 
         $this->registerUserAction('Editou um prontuário');
 
-        return view('prontuarioEdit',[
+        return view('prontuarioEdit', [
             'id_usuario' => $id_usuario,
             'nome' => $nome,
             'message' => $data['message'],
-            'type' => $data['type'] 
-    ]);
+            'type' => $data['type']
+        ]);
     }
 
 
@@ -227,6 +227,13 @@ class GerenciaPront extends BaseController
         $mpdf->WriteHTML('<p style="font-size: 18px; font-family: Arial, sans-serif;"><strong>Paciente:</strong> <span style="color: #2D4A61;">' . $prontuario['paciente'] . '</span></p>');
         $mpdf->WriteHTML('<p style="font-size: 18px; font-family: Arial, sans-serif;"><strong>Data:</strong> <span style="color: #2D4A61;">' . $data . '</span></p>');
         $mpdf->WriteHTML('<div style="border: 1px solid #2D4A61; padding: 10px; margin-top: 20px;"><p style="font-size: 20px; font-family: Arial, sans-serif; font-weight: bold; color: #2D4A61;">Descrição:</p><p style="font-size: 18px; font-family: Arial, sans-serif;">' . $prontuario['descricao'] . '</p></div>');
+
+        // Adicione o campo de assinatura para o responsável
+        $mpdf->WriteHTML('<div style="text-align: center; margin-top: 110px;">');
+        $mpdf->WriteHTML('<div style="border-bottom: 1px solid #000; width: 300px; margin: 0 auto 20px;"></div>');
+        $mpdf->WriteHTML('<p style="text-align: center;font-size: 18px; font-family: Arial, sans-serif;">Assinatura do Responsável</p>');
+        $mpdf->WriteHTML('</div>');
+
 
 
 

@@ -158,7 +158,14 @@ class Usuarios extends BaseController
         $offset = ($currentPage - 1) * $itemsPerPage;
         $usuarios = array_slice($usuarios, $offset, $itemsPerPage);
 
+        $id_usuario = $this->session->get('id_usuario');
+        $nome = $this->session->get('nome');
+
+        $this->registerUserAction('Excluiu um usuario');
+
         return view('usuarios', [
+            'id_usuario' => $id_usuario,
+            'nome' => $nome,
             'usuarios' => $usuarios,
             'currentPage' => $currentPage,
             'totalPages' => $totalPages,
@@ -192,7 +199,17 @@ class Usuarios extends BaseController
             }
         }
 
-        return view('formcreate', $data);
+        $id_usuario = $this->session->get('id_usuario');
+        $nome = $this->session->get('nome');
+
+        $this->registerUserAction('Cadastrou um novo usuario');
+
+        return view('formcreate', [
+            'id_usuario' => $id_usuario,
+            'nome' => $nome,
+            'message' => $data['message'],
+            'type' => $data['type'] 
+        ]);
     }
 
 
@@ -208,7 +225,17 @@ class Usuarios extends BaseController
             $data['type'] = 'error';
         }
 
-        return view('formedit', $data);
+        $id_usuario = $this->session->get('id_usuario');
+        $nome = $this->session->get('nome');
+
+        $this->registerUserAction('Editou dados do usuario');
+
+        return view('formedit',[
+            'id_usuario' => $id_usuario,
+            'nome' => $nome,
+            'message' => $data['message'],
+            'type' => $data['type'] 
+        ]);
     }
 
 
@@ -216,5 +243,20 @@ class Usuarios extends BaseController
     {
 
         return view('formedit', ['usuarios' => $this->usuarioModel->find($id)]);
+    }
+
+    private function registerUserAction($action)
+    {
+        $id_usuario = $this->session->get('id_usuario');
+        $nome = $this->session->get('nome');
+
+        $data = [
+            'id_usuario' => $id_usuario,
+            'nome' => $nome,
+            'action' => $action,
+            'timestamp' => date('Y-m-d H:i:s')
+        ];
+
+        $this->userActionModel->insert($data);
     }
 }

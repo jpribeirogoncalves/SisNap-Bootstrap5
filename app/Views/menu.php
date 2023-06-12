@@ -109,8 +109,15 @@
     </div>
   </main>
 
-
-
+  <footer id="footer" class="py-3 bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="p mt-2 mb-0">SisNap © 2023 Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
