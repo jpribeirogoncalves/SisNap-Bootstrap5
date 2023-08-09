@@ -208,7 +208,7 @@ class Usuarios extends BaseController
             'id_usuario' => $id_usuario,
             'nome' => $nome,
             'message' => $data['message'],
-            'type' => $data['type'] 
+            'type' => $data['type']  
         ]);
     }
 
